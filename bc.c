@@ -1,7 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <locale.h> 
-//#include <conio.h> 
+#include <conio.h> 
 #include <time.h> 
 
 void main()
@@ -70,5 +70,5 @@ void main()
 
     printf("Congratulations\n");
 
-    //_getch();
+    _getch();
 }

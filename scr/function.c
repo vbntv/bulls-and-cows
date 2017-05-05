@@ -5,35 +5,24 @@
 #include <time.h> 
 #include "function.h"
 
-int *bcrandom(int *a, int *b, int *c, int *d)
+int bcrandom(int *a, int *b, int *c, int *d)
 {
     srand(time(NULL));
 
-
-    *a = 0 + rand() % 9;
-
-    do
-    {
+    do {
+        *a = 0 + rand() % 9;
         *b = 0 + rand() % 9;
-    } while (*b == *a);
-
-    do
-    {
         *c = 0 + rand() % 9;
-    } while (*c == *a || *c == *b);
-
-    do
-    {
         *d = 0 + rand() % 9;
-    } while (*d == *a || *d == *b || *d == *c);
+    } while (*d == *a || *d == *b || *d == *c || *c == *a || *c == *b || *b == *a);
     
-    printf("Rand number %d\n", *a * 1000 + *b * 100 + *c * 10 + *d);
+    printf("Rand number %d%d%d%d\n", *a, *b, *c, *d);
 
     return 0;
 
 }
 
-int *bulls_cows(int *a, int *b, int *c, int *d)
+int bulls_cows(int *a, int *b, int *c, int *d)
 {
     int number = 0, fst, scnd, thrd, frth;
     int bulls = 0, cows = 0;

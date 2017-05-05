@@ -7,7 +7,7 @@
 
 void main()
 {
-    int *a, *b, *c, *d;
+    int a, b, c, d;
     
     bcrandom(&a, &b, &c, &d);
 

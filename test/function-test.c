@@ -7,6 +7,17 @@
 #include <ctest.h>
 #include "function.h"
 
+
+CTEST(bulls, test1) 
+{    
+    int a = 1, b = 2, c = 3, d = 4, fst = 1, scnd = 2, thrd = 3, frth = 4;
+    
+    int const result = bulls_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
+}
+
+/*
 CTEST(bulls, test1) 
 {    
     ASSERT_EQUAL(4, bulls_func(1, 2, 3, 4, 1, 2, 3, 4));
@@ -226,4 +237,4 @@ CTEST(cows, test22)
 {    
     ASSERT_EQUAL(1, cows_func(0, 1, 9, 2, 8, 3, 7, 1));
 }
-
+*/

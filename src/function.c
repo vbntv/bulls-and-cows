@@ -26,8 +26,8 @@ int bulls_func(int *a, int *b, int *c, int *d, int *fst, int *scnd, int *thrd, i
 {
 	int bulls = 0;
 	
-	if (*fst == *a)
-		bulls++;
+    if (*fst == *a)
+        bulls++;
     if (*scnd == *b)
         bulls++;
 	if (*thrd == *c)
@@ -42,8 +42,8 @@ int cows_func(int *a, int *b, int *c, int *d, int *fst, int *scnd, int *thrd, in
 {
 	int cows = 0;
 	
-	if (*fst == *b || *fst == *c || *fst == *d)
-		cows++;
+    if (*fst == *b || *fst == *c || *fst == *d)
+        cows++;
     if (*scnd == *a || *scnd == *c || *scnd == *d)
 	    cows++;
     if (*thrd == *b || *thrd == *a || *thrd == *d)

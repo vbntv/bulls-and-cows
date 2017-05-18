@@ -70,33 +70,13 @@ int bulls_cows(int *a, int *b, int *c, int *d)
         frth = number % 10;
         
         bulls = bulls_func(a, b, c, d, &fst, &scnd, &thrd, &frth);
-
-        /*if (fst == *a)
-            bulls++;
-        if (scnd == *b)
-            bulls++;
-        if (thrd == *c)
-            bulls++;
-        if (frth == *d)
-            bulls++;*/
             
         cows = cows_func(a, b, c, d, &fst, &scnd, &thrd, &frth);
-
-        /*if (fst == *b || fst == *c || fst == *d)
-            cows++;
-        if (scnd == *a || scnd == *c || scnd == *d)
-            cows++;
-        if (thrd == *b || thrd == *a || thrd == *d)
-            cows++;
-        if (frth == *b || frth == *c || frth == *a)
-            cows++;*/
 
         printf("%d bulls\n", bulls);
         printf("%d cows\n", cows);
         printf("\n");
         printf("\n");
-        //cows = 0;
-        //bulls = 0;
     }
 
     printf("Congratulations\n");

@@ -11,8 +11,8 @@ void main()
     
     bcrandom(&a, &b, &c, &d);
 
-    int number = 0, fst, scnd, thrd, frth;
-    int bulls = 0, cows = 0;
+    //int number = 0, fst, scnd, thrd, frth;
+    //int bulls = 0, cows = 0;
     
     bulls_cows(&a, &b, &c, &d);
 

@@ -5,7 +5,7 @@
 #include <time.h> 
 #include "function.h"
 
-void main()
+int main()
 {
     int a, b, c, d;
     
@@ -14,4 +14,6 @@ void main()
     bulls_cows(&a, &b, &c, &d);
 
     //_getch();
+
+    return 0;
 }

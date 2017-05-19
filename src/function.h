@@ -1,6 +1,7 @@
 #ifndef FUNCTION_H
 #define FUNCTION_H
 
+int safe_input(int *fst, int *scnd, int *thrd, int *frth);
 int bcrandom(int *a, int *b, int *c, int *d);
 int bulls_func(int *a, int *b, int *c, int *d, int *fst, int *scnd, int *thrd, int *frth);
 int cows_func(int *a, int *b, int *c, int *d, int *fst, int *scnd, int *thrd, int *frth);

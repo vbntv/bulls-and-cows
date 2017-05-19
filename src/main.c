@@ -13,7 +13,5 @@ int main()
     
     bulls_cows(&a, &b, &c, &d);
 
-    //_getch();
-
     return 0;
 }

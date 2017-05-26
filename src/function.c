@@ -2,10 +2,27 @@
 #include <stdlib.h> 
 #include <locale.h> 
 #include <ctype.h>
-//#include <conio.h> 
 #include <time.h> 
 #include "function.h"
 #include <unistd.h>
+
+
+
+/*void counter(int *try){
+      
+        
+    FILE *file = fopen("records.txt", "a");
+    if (file == NULL){
+        printf("Файл для записи вашего рекорда не удалось открыть");
+    }
+    else {
+    fputc(&try, file);
+    fclose(file);
+    }
+}
+*/
+     
+   
 
 
 void menu()
@@ -20,18 +37,11 @@ void menu()
 	int punkt;	
 	scanf("%d", &punkt); 
     int a, b, c, d;	
-	
+    
 		
-	
-	
 	switch(punkt){
 		case 1:
-			
-    
-    			bcrandom(&a, &b, &c, &d);
-                
-                    
-    
+                bcrandom(&a, &b, &c, &d);
     			bulls_cows(&a, &b, &c, &d);
 			
 			break;
@@ -71,28 +81,28 @@ void menu()
 	
 
 	
-   
-   
- 
-   
-
 int safe_input(int *fst, int *scnd, int *thrd, int *frth)
 {
+    //printf("Enter the four-digit celery: = ");
     int test, number;
-    char str[6];
+    char str[6] = {0, 0, 0, 0,'\0'};
 	fgets(str, sizeof(str), stdin);
 	test = atoi(str);
 	
-
+    if(str[0] == 0 || str[1] == 0 || str[2] == 0 || str[3] == 0)
+        return 0;
+    
     if(test > 10000 || test < 100)
 	{
 		printf("Error. It`s not four-digit number\n");
+        printf("Enter the four-digit celery: = ");
 		return 0;
 	}
 	
 	if(str[0] == str[1] || str[0] == str[2] || str[0] == str[3] || str[1] == str[2] || str[1] == str[3] || str[2] == str[3])
     {   
 	    printf("Error. Incorrect input! Please, enter different digits\n");
+        printf("Enter the four-digit celery: = ");
 	    return 0;
     }
     
@@ -103,6 +113,7 @@ int safe_input(int *fst, int *scnd, int *thrd, int *frth)
 	} else 
 	  {
 	    printf("Error. It`s not four-digit number\n");
+        printf("Enter the four-digit celery: = ");
         return 0;
       }
 
@@ -127,7 +138,9 @@ int bcrandom(int *a, int *b, int *c, int *d)
 
 int bulls_func(int *a, int *b, int *c, int *d, int *fst, int *scnd, int *thrd, int *frth)
 {
-	int bulls = 0;
+    	
+    int bulls = 0;
+    
 	
 	if (*fst == *a)
 		bulls++;
@@ -159,17 +172,19 @@ int cows_func(int *a, int *b, int *c, int *d, int *fst, int *scnd, int *thrd, in
 
 int bulls_cows(int *a, int *b, int *c, int *d)
 {
+    int sc = 0;
     int number = 0, fst, scnd, thrd, frth;
     int bulls, cows;
-
+    printf("Enter the four-digit celery: = ");
     while (number != (*a * 1000 + *b * 100 + *c * 10 + *d))
     {
-        printf("Enter the four-digit celery: = ");
-        sleep(1);
-	
+        //printf("Enter the four-digit celery: = ");
+       	
         number = safe_input(&fst, &scnd, &thrd, &frth);
+
         if(number > 0)
         {
+            
             printf("\n");
             fst = number / 1000;
             scnd = number / 100 % 10;
@@ -179,15 +194,23 @@ int bulls_cows(int *a, int *b, int *c, int *d)
             bulls = bulls_func(a, b, c, d, &fst, &scnd, &thrd, &frth);
                 
             cows = cows_func(a, b, c, d, &fst, &scnd, &thrd, &frth);
+            sc++;
     
             printf("%d bulls\n", bulls);
             printf("%d cows\n", cows);
             printf("\n");
             printf("\n");
-        }
-    }
 
-    printf("Поздравляем, вы победили!\n\n Возвращение в меню.");
+            if(bulls == 4)
+                break;
+            printf("Enter the four-digit celery: = ");
+        }
+        
+    }
+    
+    
+         
+    printf("Поздравляем, вы выиграли! Количество попыток: %d!\n\nВозвращение в меню.", sc);
 
     menu();
    

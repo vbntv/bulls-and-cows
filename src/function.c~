@@ -187,7 +187,7 @@ int bulls_cows(int *a, int *b, int *c, int *d)
         }
     }
 
-    printf("Congratulations\n\n");
+    printf("Поздравляем, вы победили!\n\n Возвращение в меню.");
 
     menu();
    

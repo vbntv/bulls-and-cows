@@ -391,7 +391,7 @@ CTEST(cows, test18)
 CTEST(cows, test19) 
 {    
 
-    int a = 6, b = 7, c = 8, d = 9, fst = 7, scnd = 2, thrd = 3, frth = 9;
+    int a = 6, b = 7, c = 8, d = 9, fst = 7, scnd = 2, thrd = 9, frth = 3;
     
     int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
     

@@ -5,6 +5,76 @@
 //#include <conio.h> 
 #include <time.h> 
 #include "function.h"
+#include <unistd.h>
+
+
+void menu()
+{
+    
+	printf("\n\n\n\n\nДобро пожаловать в игру БЫКИ И КОРОВЫ\n\n");
+	printf("Навигация по пунктам меню осуществляется нажатием соответвутствующих клавиш\n");
+	printf("1. Начать игру\n");
+	printf("2. Правила игры\n");
+	printf("3. Выход\n");
+	int punkt2;
+	int punkt;	
+	scanf("%d", &punkt); 
+    int a, b, c, d;	
+	
+		
+	
+	
+	switch(punkt){
+		case 1:
+			
+    
+    			bcrandom(&a, &b, &c, &d);
+                
+                    
+    
+    			bulls_cows(&a, &b, &c, &d);
+			
+			break;
+		case 2:
+			printf("Правила игры: ");
+			printf("Компьютер задумывает четырехзначное число. Цифры в числе не повторяются, \n");
+			printf("0 может стоять на первом месте.\n");
+			printf("Игрок делает ходы, чтобы узнать это число. \n");
+			printf("В ответ на каждый ход компьютер показывает число отгаданных цифр,\n");
+			printf("стоящих на своих местах (число быков) и число отгаданных цифр, \n");
+			printf("стоящих не на своих местах (число коров).\n\n");
+			
+			printf("Вернутся в меню? 1 - да, 2 - Выход из игры\n");
+			scanf("%d", &punkt2);
+			
+            
+			
+			    switch(punkt2){
+			        case 1:
+                    menu();
+                    break;
+                    case 2:
+                    _Exit (EXIT_SUCCESS);
+				
+		}
+		case 3:
+			_Exit (EXIT_SUCCESS);
+	
+		break;			
+	}
+			
+
+   
+
+}				
+			
+	
+
+	
+   
+   
+ 
+   
 
 int safe_input(int *fst, int *scnd, int *thrd, int *frth)
 {
@@ -95,6 +165,7 @@ int bulls_cows(int *a, int *b, int *c, int *d)
     while (number != (*a * 1000 + *b * 100 + *c * 10 + *d))
     {
         printf("Enter the four-digit celery: = ");
+        sleep(1);
 	
         number = safe_input(&fst, &scnd, &thrd, &frth);
         if(number > 0)
@@ -116,8 +187,10 @@ int bulls_cows(int *a, int *b, int *c, int *d)
         }
     }
 
-    printf("Congratulations\n");
+    printf("Congratulations\n\n");
 
+    menu();
+   
     return 0;
 
 }

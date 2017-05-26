@@ -7,11 +7,7 @@
 
 int main()
 {
-    int a, b, c, d;
-    
-    bcrandom(&a, &b, &c, &d);
-    
-    bulls_cows(&a, &b, &c, &d);
+menu();
 
-    return 0;
+return 0;   
 }

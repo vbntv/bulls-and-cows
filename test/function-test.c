@@ -160,102 +160,194 @@ CTEST(bulls, test17)
     
     ASSERT_EQUAL(1, result);
 }
-/*
+
 CTEST(bulls, test18) 
 {    
-    ASSERT_EQUAL(1, bulls_func(6, 7, 8, 9, 1, 2, 8, 4));
+
+    int a = 6, b = 7, c = 8, d = 9, fst = 1, scnd = 2, thrd = 8, frth = 4;
+    
+    int const result = bulls_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(1, result);
 }
 
 CTEST(bulls, test19) 
 {    
-    ASSERT_EQUAL(1, bulls_func(6, 7, 8, 9, 1, 2, 3, 9));
+
+    int a = 6, b = 7, c = 8, d = 9, fst = 1, scnd = 2, thrd = 3, frth = 9;
+    
+    int const result = bulls_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(1, result);
 }
 
 CTEST(bulls, test20) 
 {    
-    ASSERT_EQUAL(0, bulls_func(1, 2, 3, 4, 5, 6, 7, 8));
+
+    int a = 1, b = 2, c = 3, d = 4, fst = 5, scnd = 6, thrd = 7, frth = 8;
+    
+    int const result = bulls_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(bulls, test21) 
 {    
-    ASSERT_EQUAL(0, bulls_func(5, 6, 7, 8, 9, 0, 1, 2));
+
+    int a = 5, b = 6, c = 7, d = 8, fst = 9, scnd = 0, thrd = 1, frth = 2;
+    
+    int const result = bulls_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(bulls, test22) 
 {    
-    ASSERT_EQUAL(0, bulls_func(0, 1, 9, 2, 8, 3, 7, 4));
+
+    int a = 0, b = 1, c = 9, d = 2, fst = 8, scnd = 3, thrd = 7, frth = 4;
+    
+    int const result = bulls_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test1) 
 {    
-    ASSERT_EQUAL(0, cows_func(1, 2, 3, 4, 1, 2, 3, 4));
+
+    int a = 1, b = 2, c = 3, d = 4, fst = 1, scnd = 2, thrd = 3, frth = 4;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test2) 
 {    
-    ASSERT_EQUAL(0, cows_func(2, 3, 4, 5, 2, 3, 4, 5));
+
+    int a = 2, b = 3, c = 4, d = 5, fst = 2, scnd = 3, thrd = 4, frth = 5;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test3) 
 {    
-    ASSERT_EQUAL(0, cows_func(3, 4, 5, 6, 3, 4, 5, 6));
+    int a = 3, b = 4, c = 5, d = 6, fst = 3, scnd = 4, thrd = 5, frth = 6;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test4) 
 {    
-    ASSERT_EQUAL(0, cows_func(4, 5, 6, 7, 4, 5, 6, 7));
+
+    int a = 4, b = 5, c = 6, d = 7, fst = 4, scnd = 5, thrd = 6, frth = 7;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test5) 
 {    
-    ASSERT_EQUAL(0, cows_func(5, 6, 7, 8, 5, 6, 7, 8));
+
+    int a = 1, b = 2, c = 3, d = 4, fst = 1, scnd = 2, thrd = 3, frth = 4;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test6) 
 {    
-    ASSERT_EQUAL(0, cows_func(6, 7, 8, 9, 6, 7, 8, 9));
+
+    int a = 6, b = 7, c = 8, d = 9, fst = 6, scnd = 7, thrd = 8, frth = 9;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test7) 
 {    
-    ASSERT_EQUAL(0, cows_func(7, 8, 9, 0, 7, 8, 9, 0));
+
+    int a = 7, b = 8, c = 9, d = 0, fst = 7, scnd = 8, thrd = 9, frth = 0;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(0, result);
 }
 
 CTEST(cows, test8) 
 {    
-    ASSERT_EQUAL(4, cows_func(1, 2, 3, 4, 4, 3, 2, 1));
+    int a = 1, b = 2, c = 3, d = 4, fst = 4, scnd = 3, thrd = 2, frth = 1;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
 }
 
 CTEST(cows, test9) 
 {    
-    ASSERT_EQUAL(4, cows_func(2, 3, 4, 5, 5, 4, 3, 2));
+    int a = 2, b = 3, c = 4, d = 5, fst = 5, scnd = 4, thrd = 3, frth = 2;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
 }
 
 CTEST(cows, test10) 
 {    
-    ASSERT_EQUAL(4, cows_func(3, 4, 5, 6, 6, 5, 4, 3));
+
+    int a = 3, b = 4, c = 5, d = 6, fst = 6, scnd = 5, thrd = 4, frth = 3;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
 }
 
 CTEST(cows, test11) 
 {    
-    ASSERT_EQUAL(4, cows_func(4, 5, 6, 7, 7, 6, 5, 4));
+
+    int a = 4, b = 5, c = 6, d = 7, fst = 7, scnd = 6, thrd = 5, frth = 4;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
 }
 
 CTEST(cows, test12) 
 {    
-    ASSERT_EQUAL(4, cows_func(5, 6, 7, 8, 8, 7, 6, 5));
+
+    int a = 5, b = 6, c = 7, d = 8, fst = 8, scnd = 7, thrd = 6, frth = 5;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
 }
 
 CTEST(cows, test13) 
 {    
-    ASSERT_EQUAL(4, cows_func(6, 7, 8, 9, 9, 8, 7, 6));
+
+    int a = 6, b = 7, c = 8, d = 9, fst = 9, scnd = 8, thrd = 7, frth = 6;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
 }
 
 CTEST(cows, test14) 
 {    
-    ASSERT_EQUAL(4, cows_func(7, 8, 9, 0, 0, 9, 8, 7));
-}
 
+    int a = 7, b = 8, c = 9, d = 0, fst = 0, scnd = 9, thrd = 8, frth = 7;
+    
+    int const result = cows_func(&a, &b, &c, &d, &fst, &scnd, &thrd, &frth);
+    
+    ASSERT_EQUAL(4, result);
+}
+/*
 CTEST(cows, test15) 
 {    
     ASSERT_EQUAL(3, cows_func(7, 8, 9, 1, 1, 2, 8, 7));

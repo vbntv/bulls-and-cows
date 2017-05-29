@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> 
 #include <locale.h> 
-//#include <conio.h> 
 #include <time.h> 
 #define CTEST_COLOR_OK
 #include <ctest.h>

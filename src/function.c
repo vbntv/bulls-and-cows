@@ -18,6 +18,11 @@ void menu()
     int punkt2;
     int punkt;
     scanf("%d", &punkt);
+    if(punkt != 1 && punkt != 2 && punkt != 3)
+    {
+        printf("Такого пункта в меню нет!\n");
+        scanf("%d", &punkt);
+    }
     int a, b, c, d;
     switch(punkt){
         case 1:
